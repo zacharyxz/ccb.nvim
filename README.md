@@ -29,8 +29,8 @@ This plugin is modeled after [codewhale.nvim](https://github.com/zacharyxz/codew
   dependencies = { "folke/snacks.nvim" },
   config = true,
   keys = {
-    { "<leader>cb", "<cmd>CCB<cr>",       desc = "Toggle ccb" },
-    { "<leader>cB", "<cmd>CCBFocus<cr>",   desc = "Focus ccb" },
+    { "<leader>cc", "<cmd>CCB<cr>",       desc = "Toggle ccb" },
+    { "<leader>cC", "<cmd>CCBFocus<cr>",   desc = "Focus ccb" },
     { "<leader>ca", desc = "Add file:line ref to ccb" },
     { "<leader>cA", desc = "Add selection ref to ccb", mode = "v" },
     { "<leader>cl", desc = "Add file:line ref (with count)" },
@@ -53,7 +53,7 @@ This plugin is modeled after [codewhale.nvim](https://github.com/zacharyxz/codew
       },
     },
     keymaps = {
-      toggle        = "<leader>cb",
+      toggle        = "<leader>cc",
       add_file      = "<leader>ca",
       add_selection = "<leader>cA",
       -- Disable a keymap
@@ -82,8 +82,8 @@ This plugin is modeled after [codewhale.nvim](https://github.com/zacharyxz/codew
 
 | Key | Command | Description |
 |-----|---------|-------------|
-| `<leader>cb` | `:CCB` | Toggle ccb terminal |
-| `<leader>cB` | `:CCBFocus` | Smart focus/toggle |
+| `<leader>cc` | `:CCB` | Toggle ccb terminal |
+| `<leader>cC` | `:CCBFocus` | Smart focus/toggle |
 | `<leader>ca` | `:CCBAddRef` | **Add file:line reference** (cursor position in normal mode) |
 | `<leader>cA` | `:CCBAddRef` | **Add file:line reference** (selection range in visual mode) |
 | `<leader>cl` | — | **Add file:line reference** with count as line number (e.g. `42<leader>cl` for line 42) |
