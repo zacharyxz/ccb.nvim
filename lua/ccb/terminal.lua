@@ -60,17 +60,6 @@ local function build_opts(config, env_table, focus)
           mode = "t",
           desc = "New line (ccb)",
         },
-        ccb_esc_to_normal = {
-          "<Esc>",
-          function()
-            vim.api.nvim_feedkeys(
-              vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, true, true),
-              "n", false
-            )
-          end,
-          mode = "t",
-          desc = "Exit terminal mode",
-        },
       },
     }, config.snacks_win_opts or {}),
   }
@@ -206,6 +195,13 @@ function M.open(opts_override, cmd_args)
   if term and term:buf_valid() then
     setup_events(term, config)
     terminal = term
+    -- Terminal-mode keymap: Esc exits to normal mode instead of reaching ccb
+    vim.keymap.set("t", "<Esc>", function()
+      vim.api.nvim_feedkeys(
+        vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, true, true),
+        "n", false
+      )
+    end, { buffer = term.buf, desc = "Exit terminal mode" })
     -- Normal-mode keymaps for the terminal buffer
     vim.keymap.set("n", "<Esc>", function()
       local buf = term.buf
