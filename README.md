@@ -1,6 +1,6 @@
 # ccb.nvim
 
-Claude Code integration for Neovim. Opens [Claude Code](https://github.com/anthropics/claude-code) (`ccb`) in a [Snacks.nvim](https://github.com/folke/snacks.nvim) terminal window, with shortcuts for injecting file path + line number references directly into the ccb prompt.
+Claude Code integration for Neovim. Opens [Claude Code](https://github.com/claude-code-best/claude-code) (`ccb`) in a [Snacks.nvim](https://github.com/folke/snacks.nvim) terminal window, with shortcuts for injecting file path + line number references directly into the ccb prompt.
 
 This plugin is modeled after [codewhale.nvim](https://github.com/zacharyxz/codewhale.nvim).
 
@@ -17,7 +17,7 @@ This plugin is modeled after [codewhale.nvim](https://github.com/zacharyxz/codew
 
 - Neovim >= 0.10
 - [Snacks.nvim](https://github.com/folke/snacks.nvim)
-- [Claude Code](https://github.com/anthropics/claude-code) (`ccb` on `$PATH`)
+- [Claude Code](https://github.com/claude-code-best/claude-code) (`ccb` on `$PATH`)
 
 ## Installation
 
@@ -84,7 +84,8 @@ This plugin is modeled after [codewhale.nvim](https://github.com/zacharyxz/codew
 |-----|---------|-------------|
 | `<leader>cb` | `:CCB` | Toggle ccb terminal |
 | `<leader>cB` | `:CCBFocus` | Smart focus/toggle |
-| `<leader>ca` | `:CCBAddRef` | **Add file:line reference** (cursor position in normal mode, selection range in visual mode) |
+| `<leader>ca` | `:CCBAddRef` | **Add file:line reference** (cursor position in normal mode) |
+| `<leader>cA` | `:CCBAddRef` | **Add file:line reference** (selection range in visual mode) |
 | `<leader>cl` | — | **Add file:line reference** with count as line number (e.g. `42<leader>cl` for line 42) |
 
 ## Commands
